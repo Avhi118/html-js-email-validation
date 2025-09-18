@@ -1,2 +1,25 @@
-# html-js-email-validation
-Email validation demo using HTML and JavaScript.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Email validation </h2>
+    <input type="text" id="email" placeholder="Enter email">
+    <button onclick="CheckEmail()">Check</button>
+    <p id="out"></p>
+    <script>
+        function CheckEmail(){
+            let email= document.getElementById("email").value;
+            let pattern= /^[\w.-]+@[\w.-]+\.\w{2,3}$/;
+            if (pattern.test(email)) {
+                document.getElementById("out").innerText= "valid Email ✅";
+            } else {
+                document.getElementById("out").innerText= "Invalid Email❌";
+            }
+        }
+    </script>
+</body>
+</html>
